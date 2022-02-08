@@ -1,0 +1,169 @@
+* Git
+  What is Git
+    Git is a version  Controlling tool.its also refferred as SCM tool.
+
+    version control system are too that help a softwere team manage changes to SCM over time
+    for almost all softwere projects, the source code is like crowns jewels- a precious asset whose value must be protected.
+    most widely used modern version control system in the world tody is git.
+    Git is a distributed version Controlling tool.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+*git Bash
+    git bash is a terminal. provided by Git. whcih is use it to git releted Command.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+*git Commands
+$ git init- converting the folder to Working directory.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+* Git Configurations Commands
+$ git config --global user.name "UserName"
+$ git config --global user.email "UserEmail"
+$ git config --global --list 
+$ git config --global --replace-all user.name "Username"
+$ git config --global --replace-all user.email "Useremail"
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  *git architecture
+  As per git  3 types of files
+    1)Untracked Files.
+    2)staged Files.
+    3)Commited Files.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+### moving file from untracked to staging.
+* Commands
+$ git add <file name>   (for moving file from untraked to staging area.)
+$ git add .    (moving all files untracked to staging area)
+$ git status
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    
+### Roll back from staging to untracked
+* Commands
+$ git rm --cached <File name>
+         OR         
+$ git reset  <filename>
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+### moving files from staging area to LR.
+ * Commands
+ $ git commit -m ""  (-m is mention for a commit message)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+### To see the commit history
+* Commands
+   $ git log -oneline
+   $  git log
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+### Brnching
+This feature is provided in git, so that developers can create code related to different functionalities  on seprate branches.
+This helps the development team in creating the code in an uncluttered way.
+Later this code can be merged with master branch.
+Default branch of git is "Master"
+
+* Commands
+$ git branch <branch name>
+$ git branch (to see the list of branches )
+$ git checkout <branch name> (Move the control to one  branch to other branch)
+$ git merge    <branchname>  (To merge  branch)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+### .gitignore File
+     As you want to ignore irrelevant files we need to create .gitignore file 
+     file name should start with .gitignore
+     *.<File name>
+
+### Git Rebase
+This is called as fastforward merge.
+The commits from the child branch are added to the top of the master branch.
+This is helpful when we want code from a branch to be reflected as the latest working version on master.
+*    Commands
+$ git rebase <branch name>
+
+### Understanding difference between merge and rebase
+    In Normal merged we merged branch in linear function. whenever we wants to merge branch to after latest commit git provide the future called git rebase. 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Re arrange the commit history
+* Commands
+$ git rebase -i HEAD~<commit Count>
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+### to merge the commits
+    Merge the commit's using "squash"
+    * Commands
+    $ git rebase -i HEAD~<commit Count>
+Remove the pick word and replace it with squash
+
+###  to selectively pickup the commit's from child branch ( Cherry-pick )
+ *   Commands
+      git  cherry-pick <commit id's>
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+### Git stash
+       stashing is a one way of hiding the files.
+       Like mean 
+This feature is used for leaving unfinished work, in such a way that Git cannot access it and continue  work on some other files.
+Further commands of git should be able to process only  the new files.
+This can be done using git stash.
+ * Commands
+ To stash  the stagged files
+ $  git  stash
+
+ To stash  staged and untracked files
+ $  git  stash  -u
+
+ To see the list of stashes
+  $  git  stash  list
+
+ TO get back the stashed files
+ $ git  stash pop
+
+ TO bring the older stash  out
+ $ git  stash  pop  stash@{stash_number}
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ ### Git Ammend
+     whenevr we changing the small changes in the code as per the Git it will come as untracked files and it has to be create new commit . if we wants to existing  commit  with the Help of amend we can add that file to existing  commit. 
+ $ git commit  --amend  -m "a" <FileName>
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### to go back to previous version of code
+*commands
+$git reset --hard <Commite ID>
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+###Rmote Repo/ Bare repo
+*commands
+  $git remote add origin <address Of repo >
+  $git push -u origin master
+      
+
+
+      
+
+
+
+
+     
+ 
+
+
+
+
+
+
+
+
+ 
+    
